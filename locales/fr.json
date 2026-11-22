@@ -1,0 +1,14 @@
+{
+  "title": "Évaluation du cours",
+  "instructions": "Veuillez répondre à chaque question en quelques phrases. Vos retours sincères aident à améliorer le cours.",
+  "dateLabel": "Date",
+  "submit": "Envoyer l'évaluation",
+  "thanks": "Merci pour votre retour !",
+  "questions": [
+    "Quel sujet de ce cours avez-vous trouvé le plus difficile, et pourquoi ?",
+    "Décrivez un concept que vous n'avez compris qu'après les travaux pratiques. Qu'est-ce qui a déclenché le déclic ?",
+    "Comment votre approche de la conception de bases de données ou d'API a-t-elle changé depuis le début du trimestre ?",
+    "Qu'amélioreriez-vous dans la manière dont ce cours a été enseigné ou évalué ?",
+    "Comment comptez-vous appliquer ce que vous avez appris dans ce cours à l'avenir ?"
+  ]
+}
