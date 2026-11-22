@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1090" width="1100" height="1090" font-family="Helvetica, Arial, sans-serif">
+<rect width="1100" height="1090" fill="#fafafa"/>
+<text x="30" y="36" font-size="22" font-weight="700">MediBook &#8212; database schema (3NF, MySQL 8 / InnoDB)</text>
+<text x="30" y="58" font-size="12" fill="#555">PK = primary key &#183; FK = foreign key &#183; 1 / N = cardinality</text>
+<rect x="30" y="90" width="500" height="152" rx="6" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<rect x="30" y="90" width="500" height="30" rx="6" fill="#2e7d32"/>
+<rect x="30" y="110" width="500" height="10" fill="#2e7d32"/>
+<text x="280.0" y="111" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">patients</text>
+<rect x="31" y="122" width="498" height="22" fill="#f4f6f8"/>
+<text x="38" y="137" font-size="11" font-weight="700" fill="#b8860b">PK</text>
+<text x="66" y="137" font-size="12" font-weight="600">id</text>
+<text x="180" y="137" font-size="11" fill="#444" font-family="monospace">INT UNSIGNED</text>
+<text x="522" y="137" text-anchor="end" font-size="10.5" fill="#a02020">AUTO_INCREMENT</text>
+<text x="66" y="159" font-size="12" font-weight="600">full_name</text>
+<text x="180" y="159" font-size="11" fill="#444" font-family="monospace">VARCHAR(100)</text>
+<text x="522" y="159" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, CHECK len &#8805; 2</text>
+<rect x="31" y="166" width="498" height="22" fill="#f4f6f8"/>
+<text x="66" y="181" font-size="12" font-weight="600">email</text>
+<text x="180" y="181" font-size="11" fill="#444" font-family="monospace">VARCHAR(255)</text>
+<text x="522" y="181" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, UNIQUE</text>
+<text x="66" y="203" font-size="12" font-weight="600">phone</text>
+<text x="180" y="203" font-size="11" fill="#444" font-family="monospace">VARCHAR(20)</text>
+<text x="522" y="203" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL</text>
+<rect x="31" y="210" width="498" height="22" fill="#f4f6f8"/>
+<text x="66" y="225" font-size="12" font-weight="600">created_at</text>
+<text x="180" y="225" font-size="11" fill="#444" font-family="monospace">TIMESTAMP</text>
+<text x="522" y="225" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, DEFAULT NOW</text>
+<rect x="570" y="90" width="500" height="174" rx="6" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<rect x="570" y="90" width="500" height="30" rx="6" fill="#c62828"/>
+<rect x="570" y="110" width="500" height="10" fill="#c62828"/>
+<text x="820.0" y="111" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">doctors</text>
+<rect x="571" y="122" width="498" height="22" fill="#f4f6f8"/>
+<text x="578" y="137" font-size="11" font-weight="700" fill="#b8860b">PK</text>
+<text x="606" y="137" font-size="12" font-weight="600">id</text>
+<text x="720" y="137" font-size="11" fill="#444" font-family="monospace">INT UNSIGNED</text>
+<text x="1062" y="137" text-anchor="end" font-size="10.5" fill="#a02020">AUTO_INCREMENT</text>
+<text x="606" y="159" font-size="12" font-weight="600">full_name</text>
+<text x="720" y="159" font-size="11" fill="#444" font-family="monospace">VARCHAR(100)</text>
+<text x="1062" y="159" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, CHECK len &#8805; 2</text>
+<rect x="571" y="166" width="498" height="22" fill="#f4f6f8"/>
+<text x="606" y="181" font-size="12" font-weight="600">specialty</text>
+<text x="720" y="181" font-size="11" fill="#444" font-family="monospace">VARCHAR(100)</text>
+<text x="1062" y="181" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL</text>
+<text x="606" y="203" font-size="12" font-weight="600">consultation_fee</text>
+<text x="720" y="203" font-size="11" fill="#444" font-family="monospace">DECIMAL(10,2)</text>
+<text x="1062" y="203" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, CHECK &#8805; 0</text>
+<rect x="571" y="210" width="498" height="22" fill="#f4f6f8"/>
+<text x="606" y="225" font-size="12" font-weight="600">room</text>
+<text x="720" y="225" font-size="11" fill="#444" font-family="monospace">VARCHAR(10)</text>
+<text x="1062" y="225" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL</text>
+<text x="606" y="247" font-size="12" font-weight="600">created_at</text>
+<text x="720" y="247" font-size="11" fill="#444" font-family="monospace">TIMESTAMP</text>
+<text x="1062" y="247" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, DEFAULT NOW</text>
+<rect x="190" y="344" width="720" height="284" rx="6" fill="#fff" stroke="#333" stroke-width="1.5"/>
+<rect x="190" y="344" width="720" height="30" rx="6" fill="#6a1b9a"/>
+<rect x="190" y="364" width="720" height="10" fill="#6a1b9a"/>
+<text x="550.0" y="365" text-anchor="middle" font-size="15" font-weight="700" fill="#fff">appointments</text>
+<rect x="191" y="376" width="718" height="22" fill="#f4f6f8"/>
+<text x="198" y="391" font-size="11" font-weight="700" fill="#b8860b">PK</text>
+<text x="226" y="391" font-size="12" font-weight="600">id</text>
+<text x="360" y="391" font-size="11" fill="#444" font-family="monospace">INT UNSIGNED</text>
+<text x="902" y="391" text-anchor="end" font-size="10.5" fill="#a02020">AUTO_INCREMENT</text>
+<text x="198" y="413" font-size="11" font-weight="700" fill="#1565c0">FK</text>
+<text x="226" y="413" font-size="12" font-weight="600">patient_id</text>
+<text x="360" y="413" font-size="11" fill="#444" font-family="monospace">INT UNSIGNED</text>
+<text x="902" y="413" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL &#8594; patients.id  (ON DELETE RESTRICT)</text>
+<rect x="191" y="420" width="718" height="22" fill="#f4f6f8"/>
+<text x="198" y="435" font-size="11" font-weight="700" fill="#1565c0">FK</text>
+<text x="226" y="435" font-size="12" font-weight="600">doctor_id</text>
+<text x="360" y="435" font-size="11" fill="#444" font-family="monospace">INT UNSIGNED</text>
+<text x="902" y="435" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL &#8594; doctors.id  (ON DELETE RESTRICT)</text>
+<text x="226" y="457" font-size="12" font-weight="600">appt_datetime</text>
+<text x="360" y="457" font-size="11" fill="#444" font-family="monospace">DATETIME</text>
+<text x="902" y="457" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, CHECK 09:00-16:30, :00/:30</text>
+<rect x="191" y="464" width="718" height="22" fill="#f4f6f8"/>
+<text x="226" y="479" font-size="12" font-weight="600">status</text>
+<text x="360" y="479" font-size="11" fill="#444" font-family="monospace">ENUM('booked','cancelled')</text>
+<text x="902" y="479" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, DEFAULT 'booked'</text>
+<text x="226" y="501" font-size="12" font-weight="600">amount_paid</text>
+<text x="360" y="501" font-size="11" fill="#444" font-family="monospace">DECIMAL(10,2)</text>
+<text x="902" y="501" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, CHECK &#8805; 0</text>
+<rect x="191" y="508" width="718" height="22" fill="#f4f6f8"/>
+<text x="226" y="523" font-size="12" font-weight="600">refund_amount</text>
+<text x="360" y="523" font-size="11" fill="#444" font-family="monospace">DECIMAL(10,2)</text>
+<text x="902" y="523" text-anchor="end" font-size="10.5" fill="#a02020">NULL, CHECK 0 &#8804; refund &#8804; amount_paid</text>
+<text x="226" y="545" font-size="12" font-weight="600">cancelled_at</text>
+<text x="360" y="545" font-size="11" fill="#444" font-family="monospace">DATETIME</text>
+<text x="902" y="545" text-anchor="end" font-size="10.5" fill="#a02020">NULL (set iff cancelled)</text>
+<rect x="191" y="552" width="718" height="22" fill="#f4f6f8"/>
+<text x="226" y="567" font-size="12" font-weight="600">booked_at</text>
+<text x="360" y="567" font-size="11" fill="#444" font-family="monospace">TIMESTAMP</text>
+<text x="902" y="567" text-anchor="end" font-size="10.5" fill="#a02020">NOT NULL, DEFAULT NOW</text>
+<text x="226" y="589" font-size="12" font-weight="600">active_slot</text>
+<text x="360" y="589" font-size="11" fill="#444" font-family="monospace">DATETIME (generated)</text>
+<text x="902" y="589" text-anchor="end" font-size="10.5" fill="#a02020">STORED = IF(status='booked', appt_datetime, NULL)</text>
+<rect x="191" y="596" width="718" height="22" fill="#f4f6f8"/>
+<text x="226" y="611" font-size="12" font-weight="600">&#8195;UNIQUE (doctor_id, active_slot)</text>
+<text x="360" y="611" font-size="11" fill="#444" font-family="monospace"></text>
+<text x="902" y="611" text-anchor="end" font-size="10.5" fill="#a02020">&#8592; no double-booking of a doctor slot</text>
+<line x1="280" y1="242" x2="280" y2="344" stroke="#333" stroke-width="2"/>
+<text x="288" y="262" font-size="13" font-weight="700">1</text><text x="288" y="336" font-size="13" font-weight="700">N</text><text x="310" y="297" font-size="11">patient books appointments</text>
+<line x1="820" y1="264" x2="820" y2="344" stroke="#333" stroke-width="2"/>
+<text x="828" y="284" font-size="13" font-weight="700">1</text><text x="828" y="336" font-size="13" font-weight="700">N</text><text x="850" y="308" font-size="11">doctor has appointments</text>
+<path d="M272 332 L280 344 L288 332" fill="none" stroke="#333" stroke-width="1.8"/>
+<path d="M812 332 L820 344 L828 332" fill="none" stroke="#333" stroke-width="1.8"/>
+<rect x="30" y="668" width="1040" height="92" rx="6" fill="#fff" stroke="#999" stroke-width="1.5"/>
+<text x="44" y="690" font-size="13" font-weight="700">Relationships &amp; cardinality</text>
+<text x="44" y="709" font-size="11.5" font-weight="400">patients 1 : N appointments &#8212; a patient may book many appointments; every appointment has exactly one patient.</text>
+<text x="44" y="728" font-size="11.5" font-weight="400">doctors 1 : N appointments &#8212; a doctor may have many (or none); every appointment has exactly one doctor.</text>
+<text x="44" y="747" font-size="11.5" font-weight="400">patients N : M doctors is resolved through appointments (associative entity).</text>
+<rect x="30" y="780" width="1040" height="168" rx="6" fill="#fff8e1" stroke="#c9a227" stroke-width="1.5"/>
+<text x="44" y="802" font-size="13" font-weight="700">Business rules enforced by constraints</text>
+<text x="44" y="821" font-size="11.5" font-weight="400">&#8226; A doctor cannot have two appointments at the same date/time: UNIQUE (doctor_id, active_slot) [uq_doctor_active_slot].</text>
+<text x="44" y="840" font-size="11.5" font-weight="400">   active_slot = appt_datetime while status='booked' and NULL once 'cancelled' (MySQL allows many NULLs in a UNIQUE index),</text>
+<text x="44" y="859" font-size="11.5" font-weight="400">   so a cancelled slot can be re-booked while the cancelled row and its refund stay as history.</text>
+<text x="44" y="878" font-size="11.5" font-weight="400">&#8226; Working hours 09:00-17:00, 30-minute boundaries: CHECK (HOUR BETWEEN 9 AND 16, MINUTE IN (0,30), SECOND = 0)  (last slot starts 16:30).</text>
+<text x="44" y="897" font-size="11.5" font-weight="400">&#8226; Cancellation integrity: CHECK (booked &#8594; cancelled_at &amp; refund_amount NULL; cancelled &#8594; both NOT NULL); refund_amount &#8804; amount_paid.</text>
+<text x="44" y="916" font-size="11.5" font-weight="400">&#8226; patients.email UNIQUE; money columns &#8805; 0; FKs ON DELETE RESTRICT (no deleting a patient/doctor who still has appointments).</text>
+<text x="44" y="935" font-size="11.5" font-weight="400">&#8226; Max 12 appointments per doctor per day is a counting rule, so it is enforced in the booking transaction (row lock on doctors.id), not by a row CHECK.</text>
+<rect x="30" y="968" width="1040" height="92" rx="6" fill="#fff" stroke="#999" stroke-width="1.5"/>
+<text x="44" y="990" font-size="13" font-weight="700">Normalisation: spreadsheet &#8594; 3NF</text>
+<text x="44" y="1009" font-size="11.5" font-weight="400">1NF: atomic values; appt_ref becomes appointments.id.</text>
+<text x="44" y="1028" font-size="11.5" font-weight="400">2NF/3NF: patient_name, email, phone depend only on the patient &#8594; patients; doctor_name, specialty, consultation_fee, room depend only on the doctor &#8594; doctors.</text>
+<text x="44" y="1047" font-size="11.5" font-weight="400">appt_datetime, amount_paid (price actually charged, e.g. 120.00 vs fee 150.00) and booked_on describe the appointment itself. No transitive dependencies remain.</text>
+</svg>
