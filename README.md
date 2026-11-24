@@ -1,7 +1,11 @@
 # MediBook — Clinic Appointment System
 
 Node.js · Express · MySQL (`mysql2`, parameterized queries only, no ORM) · Redis (`ioredis`) · Jest.
-The original assessment brief is kept in [`docs/ASSIGNMENT.md`](docs/ASSIGNMENT.md).
+
+## Demo
+
+Walkthrough video:  
+https://drive.google.com/file/d/18n_nLm8YoNQxq80GvmmpNRJoGjgQkWL8/view?usp=sharing
 
 ## Contents
 

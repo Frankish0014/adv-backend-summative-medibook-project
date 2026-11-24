@@ -1,18 +1,26 @@
 // Refund policy (pure function).
 //
-//   notice  > 48 h            -> 100 %
-//   24 h <= notice <= 48 h    ->  50 %   (exactly 48 h and exactly 24 h are in the 50 % tier)
-//   notice  < 24 h            ->   0 %
+//   notice  > REFUND_FULL_HOURS            -> REFUND_FULL_PCT
+//   HALF <= notice <= FULL                 -> REFUND_HALF_PCT  (exact boundaries included)
+//   notice  < REFUND_HALF_HOURS            -> REFUND_NONE_PCT
 //
 // "More than 48 hours -> 100%" and "less than 24 hours -> 0%" are strict, so the two boundary
 // instants themselves fall into the 24-48 h (50 %) band, which the brief describes as "24-48 hours".
 
+const {
+  REFUND_FULL_HOURS,
+  REFUND_HALF_HOURS,
+  REFUND_FULL_PCT,
+  REFUND_HALF_PCT,
+  REFUND_NONE_PCT,
+} = require('../config/constants');
+
 const HOUR_MS = 60 * 60 * 1000;
 
 function refundPercentage(hoursNotice) {
-  if (hoursNotice > 48) return 100;
-  if (hoursNotice >= 24) return 50;
-  return 0;
+  if (hoursNotice > REFUND_FULL_HOURS) return REFUND_FULL_PCT;
+  if (hoursNotice >= REFUND_HALF_HOURS) return REFUND_HALF_PCT;
+  return REFUND_NONE_PCT;
 }
 
 /**
